@@ -14,12 +14,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Builder
+@Table(name = "members")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
     private String email;
@@ -27,8 +29,6 @@ public class Member {
     private String nickName;
 
     private String password;
-
-    private String passwordCheck;
 
     private String cityName;
 

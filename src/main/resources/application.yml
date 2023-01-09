@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+
+    h2:
+      console:
+        enabled: true
+#        settings:
+#         web-allow-others: true
+
+    datasource:
+      url: jdbc:h2:mem:testdb;MODE=MYSQL
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+
+    jpa:
+      open-in-view: false
+#      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+#        ddl-auto: none
+        ddl-auto: create-drop
+      properties:
+        hibernate:
+          format_sql: true
+          show_sql: true
+          globally_quoted_identifiers: true
+
+    logging:
+      level:
+        com.tutorial: debug
+
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+
+
+    servlet:
+      multipart:
+        max-file-size: 10MB
+        max-request-size: 10MB
+
+
