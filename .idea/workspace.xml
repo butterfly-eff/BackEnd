@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="491103c5-74d7-4e8d-92b8-1767a22bd52e" name="Changes" comment="" />
+    <list default="true" id="491103c5-74d7-4e8d-92b8-1767a22bd52e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,12 +22,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="butterfly-eff" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -59,7 +56,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/신현재/Desktop/코딩/[Inflearn]/99-Moa-B",
+=======
+    "last_opened_file_path": "C:/Users/user/butterfly",
+>>>>>>> ba046ab0d1d239b9365866af7d5dcb4b11940296
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,7 +86,12 @@
       <option name="presentableId" value="Default" />
       <updated>1673244534500</updated>
       <workItem from="1673244537410" duration="1586000" />
+<<<<<<< HEAD
       <workItem from="1673247573775" duration="6168000" />
+=======
+      <workItem from="1673247573775" duration="333000" />
+      <workItem from="1673249124367" duration="14000" />
+>>>>>>> ba046ab0d1d239b9365866af7d5dcb4b11940296
     </task>
     <servers />
   </component>
