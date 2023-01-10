@@ -2,7 +2,9 @@ package com.example.butterflyeff.member;
 
 
 import com.example.butterflyeff.ResponseDto;
+import com.example.butterflyeff.security.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,4 +31,17 @@ public class MemberController {
     public ResponseDto<String> signin(@RequestBody SigninRequestDto signinRequestDto, HttpServletResponse httpServletResponse){
         return memberService.signin(signinRequestDto, httpServletResponse);
     }
+
+    // 로그아웃
+    @PostMapping("/signout")
+    public ResponseDto<String> signout(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        return memberService.signout(userDetails.getMember().getEmail());
+    }
+
+    // 닉네임 중복확인
+    @PostMapping("/nickNameCheck")
+    public ResponseDto<String> nickNameCheck(@RequestBody NickNameCheckRequestDto nickNameCheckRequestDto){
+        return memberService.nickNameCheck(nickNameCheckRequestDto);
+    }
+
 }

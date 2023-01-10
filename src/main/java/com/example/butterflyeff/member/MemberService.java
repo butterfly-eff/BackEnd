@@ -51,7 +51,7 @@ public class MemberService {
         );
 
         if (!passwordEncoder.matches(signinRequestDto.getPassword(), member.getPassword())) {
-            return ResponseDto.fail(500, "비밀번호가 일치하지 않습니다", "Bad Request");
+            return ResponseDto.fail(400, "비밀번호가 일치하지 않습니다", "Bad Request");
         }
 
         // userId 값을 포함한 토큰 생성 후 tokenDto 에 저장
@@ -73,6 +73,36 @@ public class MemberService {
                 "로그인 성공"
         );
     }
+
+    // 로그아웃
+    public ResponseDto<String> signout(String email){
+        // 해당 유저의 refreshtoken 이 없을 경우
+        if (refreshTokenRepository.findByEmail(email).isEmpty()){
+            return ResponseDto.fail(404,"Bad Request", "로그인을 해주세요.");
+        }
+        // 자신의 refreshtoken 만 삭제 가능
+        String emailrepo = refreshTokenRepository.findByEmail(email).get().getEmail();
+        if(email.equals(emailrepo)){
+            refreshTokenRepository.deleteByEmail(email);
+            return ResponseDto.success("로그아웃 성공");
+        }else{
+            return ResponseDto.fail(401,"Unauthorized","refreshtoken 삭제 권한이 없습니다.");
+        }
+    }
+
+    // 닉네임 중복확인
+    public ResponseDto<String> nickNameCheck(NickNameCheckRequestDto nickNameCheckRequestDto){
+        String nickName = nickNameCheckRequestDto.getNickName();
+        if(memberRepository.findByNickName(nickName).isPresent()){
+            return ResponseDto.fail(400,"이미 등록된 닉네임입니다.", "Bad Request");
+        }else{
+            return ResponseDto.success("사용 가능한 닉네임입니다.");
+        }
+    }
+
+
+
+
 
     private void setHeader(HttpServletResponse httpServletResponse, TokenDto tokenDto) {
         httpServletResponse.addHeader(JwtUtil.ACCESS_TOKEN, tokenDto.getAccessToken());
