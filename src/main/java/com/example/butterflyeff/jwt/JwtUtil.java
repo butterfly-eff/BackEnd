@@ -1,7 +1,7 @@
 package com.example.butterflyeff.jwt;
 
 
-import com.example.butterflyeff.security.UserDetailsServiceImpl;
+import com.example.butterflyeff.security.auth.UserDetailsServiceImpl;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;

@@ -1,7 +1,7 @@
-package com.example.butterflyeff.security;
+package com.example.butterflyeff.security.auth;
 
 
-import com.example.butterflyeff.member.Member;
+import com.example.butterflyeff.member.model.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
