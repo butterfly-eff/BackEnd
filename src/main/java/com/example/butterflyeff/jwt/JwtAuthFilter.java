@@ -1,8 +1,7 @@
 package com.example.butterflyeff.jwt;
 
 
-import com.example.butterflyeff.ResponseDto;
-import com.example.butterflyeff.member.MemberResponseDto;
+import com.example.butterflyeff.member.dto.response.MemberResponseDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

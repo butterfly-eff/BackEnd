@@ -1,7 +1,8 @@
-package com.example.butterflyeff.security;
+package com.example.butterflyeff.security.auth;
 
-import com.example.butterflyeff.member.Member;
-import com.example.butterflyeff.member.MemberRepository;
+import com.example.butterflyeff.member.model.Member;
+import com.example.butterflyeff.member.repository.MemberRepository;
+import com.example.butterflyeff.security.auth.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

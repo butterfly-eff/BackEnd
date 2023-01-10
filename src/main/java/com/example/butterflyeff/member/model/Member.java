@@ -1,4 +1,4 @@
-package com.example.butterflyeff.member;
+package com.example.butterflyeff.member.model;
 
 
 import lombok.AllArgsConstructor;

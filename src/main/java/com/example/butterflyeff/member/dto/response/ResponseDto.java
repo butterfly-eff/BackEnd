@@ -1,4 +1,4 @@
-package com.example.butterflyeff;
+package com.example.butterflyeff.member.dto.response;
 
 
 import lombok.AllArgsConstructor;
