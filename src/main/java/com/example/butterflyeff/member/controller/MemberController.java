@@ -1,15 +1,11 @@
 package com.example.butterflyeff.member.controller;
 
-
-<<<<<<< HEAD:src/main/java/com/example/butterflyeff/member/MemberController.java
-import com.example.butterflyeff.ResponseDto;
-import com.example.butterflyeff.security.UserDetailsImpl;
-=======
+import com.example.butterflyeff.member.NickNameCheckRequestDto;
 import com.example.butterflyeff.member.dto.response.ResponseDto;
 import com.example.butterflyeff.member.service.MemberService;
 import com.example.butterflyeff.member.dto.request.SigninRequestDto;
 import com.example.butterflyeff.member.dto.request.SignupRequestDto;
->>>>>>> 1630131c67844de54d3ce926036b0ee6e2757741:src/main/java/com/example/butterflyeff/member/controller/MemberController.java
+import com.example.butterflyeff.security.auth.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;

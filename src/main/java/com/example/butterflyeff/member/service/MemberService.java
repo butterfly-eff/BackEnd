@@ -1,5 +1,6 @@
 package com.example.butterflyeff.member.service;
 
+import com.example.butterflyeff.member.NickNameCheckRequestDto;
 import com.example.butterflyeff.member.dto.response.ResponseDto;
 import com.example.butterflyeff.jwt.JwtUtil;
 import com.example.butterflyeff.jwt.RefreshToken;
@@ -104,10 +105,7 @@ public class MemberService {
         }
     }
 
-
-
-
-
+    
     private void setHeader(HttpServletResponse httpServletResponse, TokenDto tokenDto) {
         httpServletResponse.addHeader(JwtUtil.ACCESS_TOKEN, tokenDto.getAccessToken());
         httpServletResponse.addHeader(JwtUtil.REFRESH_TOKEN, tokenDto.getRefreshToken());
