@@ -13,6 +13,7 @@ import com.example.butterflyeff.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
@@ -49,6 +50,7 @@ public class MemberService {
     }
 
     // 로그인
+    @Transactional
     public ResponseDto<String> signin(SigninRequestDto signinRequestDto, HttpServletResponse httpServletResponse){
         // userId 로 user 정보 호출
         Member member = memberRepository.findByEmail(signinRequestDto.getEmail()).orElseThrow(
@@ -80,6 +82,7 @@ public class MemberService {
     }
 
     // 로그아웃
+    @Transactional
     public ResponseDto<String> signout(String email){
         // 해당 유저의 refreshtoken 이 없을 경우
         if (refreshTokenRepository.findByEmail(email).isEmpty()){
@@ -105,7 +108,7 @@ public class MemberService {
         }
     }
 
-    
+
     private void setHeader(HttpServletResponse httpServletResponse, TokenDto tokenDto) {
         httpServletResponse.addHeader(JwtUtil.ACCESS_TOKEN, tokenDto.getAccessToken());
         httpServletResponse.addHeader(JwtUtil.REFRESH_TOKEN, tokenDto.getRefreshToken());
