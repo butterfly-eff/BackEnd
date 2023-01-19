@@ -9,6 +9,7 @@ import com.example.butterflyeff.trade.model.Trade;
 import com.example.butterflyeff.trade.repository.TradeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ public class LikeService {
     private final TradeRepository tradeRepository;
 
     // 좋아요 추가, 삭제
+    @Transactional
     public ResponseDto<String>addLike(UserDetailsImpl userDetails, Long id){
         Optional<Like> likeRepo = likeRepository.findByTradeIdAndMemberId(id, userDetails.getMember().getId());
         Optional<Trade> trade = tradeRepository.findById(id);
