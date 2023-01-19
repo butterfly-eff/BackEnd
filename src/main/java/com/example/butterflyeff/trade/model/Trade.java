@@ -22,7 +22,7 @@ public class Trade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name = "trade_id", nullable = false)
     private Long id;
 
     private String title;
