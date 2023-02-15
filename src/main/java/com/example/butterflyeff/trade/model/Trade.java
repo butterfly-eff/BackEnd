@@ -1,5 +1,6 @@
 package com.example.butterflyeff.trade.model;
 
+import com.example.butterflyeff.like.model.Like;
 import com.example.butterflyeff.member.model.Member;
 import com.example.butterflyeff.security.auth.UserDetailsImpl;
 import com.example.butterflyeff.trade.dto.TradeRequestDto;
@@ -12,6 +13,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -22,7 +25,7 @@ public class Trade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name = "trade_id", nullable = false)
     private Long id;
 
     private String title;
@@ -39,6 +42,9 @@ public class Trade {
     private String categoryDetail;
 
     private Long likeCnt;
+
+    @OneToMany(mappedBy = "like", cascade = CascadeType.ALL)
+    private List<Like> like = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "member_id")
