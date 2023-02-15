@@ -39,6 +39,6 @@ public class Member {
 
     private String dongName;
 
-    @OneToMany(mappedBy = "like", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Like> like = new ArrayList<>();
 }

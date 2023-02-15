@@ -43,7 +43,7 @@ public class Trade {
 
     private Long likeCnt;
 
-    @OneToMany(mappedBy = "like", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "trade", cascade = CascadeType.ALL)
     private List<Like> like = new ArrayList<>();
 
     @ManyToOne

@@ -5,10 +5,12 @@ import com.example.butterflyeff.member.model.Member;
 import com.example.butterflyeff.trade.model.Trade;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Getter
 @Entity
 @Builder
 @NoArgsConstructor
